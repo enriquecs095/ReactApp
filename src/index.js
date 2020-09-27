@@ -1,17 +1,61 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
+import ReactDOM from "react-dom";
+import { App } from "./components/App";
+import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <Router>
+    <App></App>
+  </Router>,
+  document.getElementById("root")
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+/*
+export default class Example extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { name: "Texto Inicial" };
+  }
+
+  //state= { name: "Texto Inicial" }; en vez de constructor
+
+  onchange = (event) => {
+    console.log(event.target.value);
+    this.setState({ name: event.target.value });
+  };
+
+  render() {
+    return <input onchange={this.onChange} value={this.props.username} />;
+  }
+}
+
+ReactDOM.render(<Example username="jrom" />, document.getElementById("root"));
+*/
+/*
+import React from "react";
+import ReactDOM from "react-dom";
+import { render } from "react-dom";
+
+const virtualDOMExample = () => {
+  document.getElementById("root").innerHTML = `
+    <div>
+    Hello HTML
+    <input  />
+    <pre>${new Date().toLocaleTimeString()}</pre>
+    </div>
+    `;
+  ReactDOM.render(
+    React.createElement(
+      "div",
+      null,
+      "Hello HTML",
+      React.createElement("input", null),
+      React.createElement("pre", null, new Date().toLocaleTimeString())
+    ),
+    document.getElementById("root2")
+  );
+};
+
+render(setInterval(virtualDOMExample, 1000), document.getElementById("root"));
+*/
